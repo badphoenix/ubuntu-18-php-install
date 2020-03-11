@@ -29,7 +29,8 @@ sleep 5
    cd /tmp/ioncube/
    io_cub=`php -i | grep extension_dir | awk '{print $5}'`
    cp ioncube_loader_lin_$ver.so $io_cub
-   io_lou=`php -i | grep additional | awk '{print $9}'`
+#   io_lou=`php -i | grep additional | awk '{print $9}'`
+   io_lou=`php -i | grep additional | sed 's/cli/apache2/'`
    echo 'zend_extension=ioncube_loader_lin_'$ver'.so' > $io_lou/00-ioncube-loader.ini
 
 done
