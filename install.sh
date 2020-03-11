@@ -32,8 +32,8 @@ sleep 5
 #   io_lou=`php -i | grep additional | awk '{print $9}'`
    io_lou=`php -i | grep additional | sed 's/cli/apache2/'`
    io_lou_cli=`php -i | grep additional | awk '{print $9}'`
-   echo 'zend_extension=ioncube_loader_lin_'$ver'.so' > $io_lou/00-ioncube-loader.ini
-   echo 'zend_extension=ioncube_loader_lin_'$ver'.so' > $io_lou_cli/00-ioncube-loader.ini
+   echo 'zend_extension=ioncube_loader_lin_'$ver'.so' >> /etc/php/$ver/apache2/php.ini 
+   echo 'zend_extension=ioncube_loader_lin_'$ver'.so' >> $io_lou_cli/00-ioncube-loader.ini
 
 done
 if [ -d /tmp/ioncube/ ]; then
