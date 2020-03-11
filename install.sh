@@ -40,4 +40,7 @@ if [ -d /tmp/ioncube/ ]; then
    rm -r /tmp/ioncube/
 fi
 #done
-
+# sudo update-alternatives --set php /usr/bin/php7.1
+# sudo a2dismod php7.0
+# sudo a2enmod php7.1
+# sudo systemctl restart apache2
